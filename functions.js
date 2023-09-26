@@ -6,7 +6,7 @@
  */
 
 const channels = require("./channels.json");
-console.log(channels[0]);
+// console.log(channels[0]);
 
 /**************************************************************
  * getChannelName(channel)
@@ -18,7 +18,7 @@ function getChannelName(channel) {
   return channel.name;
 }
 
-console.log(getChannelName(channels[0]));
+// console.log(getChannelName(channels[0]));
 
 /**************************************************************
  * numberOfVideos(channel)
@@ -29,7 +29,7 @@ function numberOfVideos(channel) {
   // Your code here
   return channel.videos.length;
 }
-console.log(numberOfVideos(channels[0]));
+// console.log(numberOfVideos(channels[0]));
 
 /**************************************************************
  * channelHasVideo(videoTitle, channel):
@@ -43,8 +43,8 @@ console.log(numberOfVideos(channels[0]));
 function channelHasVideo(videoTitle, channel) {
   return channel.videos.some((x) => x.title == videoTitle);
 }
-console.log(channelHasVideo("The Universal S", channels[0]));
-console.log(channelHasVideo("The Universal S", channels[1]));
+// console.log(channelHasVideo("The Universal S", channels[0]));
+// console.log(channelHasVideo("The Universal S", channels[1]));
 
 /**************************************************************
  * getChannelByName(channelName, channels):
@@ -56,9 +56,9 @@ console.log(channelHasVideo("The Universal S", channels[1]));
  ****************************************************************/
 function getChannelByName(channelName, channels) {
   // Your code here
-  return channels.find((x) => channelName);
+  return channels.find((x) => x.name == channelName);
 }
-console.log(getChannelByName("PowerfulJRE", channels));
+console.log(getChannelByName("LEMMiNO", channels));
 
 /**************************************************************
  * getChannelByVideoTitle(videoTitle, channels):
@@ -77,7 +77,7 @@ function getChannelByVideoTitle(videoTitle, channels) {
   });
 }
 
-console.log(getChannelByVideoTitle("The Universal S", channels));
+// console.log(getChannelByVideoTitle("The Universal S", channels));
 
 /**************************************************************
  * searchChannels(query, channels):
@@ -92,7 +92,7 @@ function searchChannels(query, channels) {
     return channel.name.includes(query) || channel.description.includes(query);
   });
 }
-console.log(searchChannels("the", channels));
+// console.log(searchChannels("the", channels));
 
 module.exports = {
   getChannelName,
